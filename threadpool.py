@@ -37,8 +37,8 @@ def work():
         # 等待任务完成
 
         # 接收一个 Future 对象列表
-        # 返回一个 可迭代对象，迭代顺序是 任务完成的顺序，而不是提交顺序
-        # 非常适合 任务耗时不均匀 的情况，可以“先处理先完成的任务”
+        # 返回一个 可迭代对象results，迭代顺序是 任务完成的顺序，而不是提交顺序
+        # 非常适合 任务耗时不均匀 的情况，可以“先处理先完成的任务” ——>as_completed的作用
         for f in as_completed(Futures):
             results.append(f.result())
     return results
