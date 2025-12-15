@@ -3,7 +3,9 @@ import threading
 import time
 import random
 
-
+t = threading.Thread()
+t.start()
+t.join()
 
 def work():
     # 共享数据
